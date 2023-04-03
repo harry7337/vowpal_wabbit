@@ -293,6 +293,7 @@ std::unique_ptr<VW::workspace> VW::initialize(std::unique_ptr<config::options_i>
     std::unique_ptr<VW::io::reader> model_override_reader, driver_output_func_t driver_output_func,
     void* driver_output_func_context, VW::io::logger* custom_logger)
 {
+  std::cout << "Hello world" << std::endl;
   auto* released_options = options.release();
   std::unique_ptr<config::options_i, options_deleter_type> options_custom_deleter(
       released_options, [](VW::config::options_i* ptr) { delete ptr; });
